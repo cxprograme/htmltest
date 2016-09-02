@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>纯CSS3 轮播图</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding: 0;
+		}
+		#l01,#l02,#l03{
+			display: none;
+		}
+		.wrap{
+			position: relative;
+			width: 500px;
+			height: 360px;
+			margin:auto;
+			overflow: hidden;
+		}
+		.wrap .imgs ul{
+			background-color: red;
+			width: 300%;
+			/*overflow: hidden;*/
+		}
+		.wrap .imgs ul li{
+			float: left;
+			width: 500px;
+			height: 360px;
+			list-style:none;
+
+		}
+		.opts{
+			position: absolute;
+			left: 50%;
+			bottom: 13px;
+			width: 320px;
+			height: 50px;
+			margin-left: -160px;
+		}
+		.opts label img{
+			width: 100px;
+			height: 50px;
+		}
+		#l01:checked ~ .imgs #slider 
+		{	 
+		  margin-left:0;
+		}
+
+		#l02:checked ~ .imgs #slider {
+		  margin-left: -500px;
+		}
+
+		#l03:checked ~ .imgs #slider {
+		  margin-left: -1000px;
+		}
+
+		.opts li:hover{
+			border:1px solid red;
+		}
+		.opts label{
+			display: inline-block;
+			width: 100px;
+			height: 50px;
+			background-color: #0f0;
+			text-align: center;
+			line-height: 50px;
+			font-size: 20px;
+			color:#fff;
+
+		}
+		.opts label:hover{
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+
+		<input type="radio" checked name="slider" id="l01">
+		<input type="radio"  name="slider" id="l02">
+		<input type="radio"  name="slider" id="l03">
+		<div class="imgs">
+			<ul id="slider">
+				<li id="li1"><img src="./image/1.jpg" alt=""></li>
+				<li id='li2'><img src="./image/2.jpg" alt=""></li>
+				<li id='li3'><img src="./image/3.jpg" alt=""></li>
+			</ul>
+		</div>
+		<div class="opts">
+			<label for="l01"><img src="./image/1.jpg"></label>
+			<label for="l02"><img src="./image/2.jpg"></label>
+			<label for="l03"><img src="./image/3.jpg"></label>
+		</div>
+	</div>
+</body>
+</html>
