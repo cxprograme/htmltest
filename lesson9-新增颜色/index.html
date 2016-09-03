@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>随机颜色</title>
+	<style type="text/css">
+		#box{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+	</div>
+	<button id='btn'>点击我改变颜色</button>
+	<script type="text/javascript">
+		var box=document.getElementById("box");
+		var btn=document.getElementById('btn');
+		function color(){
+			return '#'+(
+			function(color)
+			{
+				return new Array(7-color.length).join('0')+color;
+			}
+			)(Math.ceil(Math.random()*16777215).toString(16));
+			//(Math.random()*0x1000000 << 0).toString();
+		}
+
+		btn.onclick=function(){
+			console.log(color());
+			box.style.background=color();
+		}
+	</script>
+</body>
+</html>
