@@ -1,0 +1,55 @@
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <title>导航自适应</title>
+      <style>
+        *{
+          margin:0px;
+          padding:0px;
+        }
+        .nav{
+          width: 800px;
+          height: 50px;
+          line-height: 50px;
+          margin: 0 auto;
+          border: 1px solid #eee;
+          text-align: justify;
+        }
+        .nav #items li{
+          display: inline-block;
+          list-style: none;
+        }
+        .nav ul:after{
+          content: "";
+          width:100%;
+          display: inline-block;
+        }
+      </style>
+  </head>
+
+  <body>
+      <div class="nav">
+            <ul id="items">
+              <li>首页</li>
+              <li>咋个镇江</li>
+              <li>文艺圈</li>
+              <li>流金岁月</li>
+            </ul>
+            <input type="text" value="" id="val" placeholder="输入导航内容">
+            <button value="" id="btn">生成</button>
+      </div>
+
+      <script>
+            var items=document.getElementById("items");
+            var val=document.getElementById("val");
+            var btn=document.getElementById("btn");
+            btn.onclick=function(){
+              var value=val.value;
+              items.innerHTML+=' '+'<li>'+value+'</li>';
+              val.value='';
+            }
+      </script>
+  </body>
+  </html>

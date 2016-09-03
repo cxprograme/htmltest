@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3计数器</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		
+
+		p{
+			width: 100px;
+			height: 50px;
+			border:1px solid red;
+		}
+		.wrap{
+			margin:auto;
+			counter-reset:count 1 count1;		/*设置计数器的名称自定义 如果没有加1 则从0开始，如果加1 则从1开始*/ 	
+		}
+		p:before{
+			content: counter(count) '.' counter(count1,decimal);		/*调用计数器 */
+			counter-increment: count 0 count1 1;		/*让计数器自动加一  计数器名称后面有数字，则按数字递增*/
+		}
+
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<p>天下</p>
+		<p>乌贼</p>
+		<p>道士</p>
+		<p>下山</p>
+	</div>
+</body>
+</html>
