@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>伪类实现导航两端对齐</title>
+	<style type="text/css">
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		.nav{
+			
+		/*width: 800px;*/
+       /*   height: 50px;
+          line-height: 50px;*/
+          margin: 0 auto;
+          border: 1px solid #eee;
+          text-align: justify;
+		}
+		.nav ul {
+			/*overflow: hidden;*/
+			/*border:1px solid #eee;*/
+		}
+		.nav ul li{
+			display: inline-block;
+			width: 100px;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+			background-color: blue;
+			color:#fff;
+			list-style-type: none;
+		}
+		.nav ul:after{
+
+			content: " ";
+			width: 100%;
+			/*height: 0;*/
+			height:0px;
+			display: inline-block;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="nav">
+		<ul>
+			<li>天下</li>
+			<li>乌贼</li>
+			<li>道士</li>
+			<li>下上</li>
+		</ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>利用border画正方形和三角形</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		.pencil{
+			width: 0px;
+			height: 0px;
+			margin:auto;
+			border:50px solid;
+			border-color: red blue green black;
+
+			margin-bottom: 100px;
+
+		}
+		.pencil1{
+			position: relative;
+			width: 100px;
+			height: 100px;
+			margin:auto;
+			background-color: black;
+		}
+
+		.pencil1:before{
+			content: '';
+			display: inline-block;
+			position: absolute;
+
+			width: 0px;
+			height: 0px;
+			margin:auto;
+			border:50px solid;
+
+
+			border-color: transparent transparent transparent black;
+			left:100px;
+		}
+		}
+	</style>
+</head>
+<body>
+	<div class="pencil"></div>
+
+	<div class="pencil1"></div>
+</body>
+</html>

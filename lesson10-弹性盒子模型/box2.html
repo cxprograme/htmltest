@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3弹性盒子模型-inline-box</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		.box{
+			height: 100px;
+			border:1px solid red;
+			display: -webkit-inline-box;		
+			/*根据元素的大小来决定父元素的宽度*/
+		}
+		.box div{
+			width: 100px;
+			height: 50px;
+			background-color: blue;
+			text-align: center;
+			line-height: 50px;
+			margin:10px;
+			color:#fff;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+		<div>5</div>
+	</div>
+	
+</body>
+</html>
