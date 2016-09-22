@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>四列等框</title>
+	<style type="text/css">
+		*{margin: 0;padding:0;}
+		.wrap{
+			display: flex;
+			height: 400px;
+		}
+		.wrap div{
+			background: blue;
+			flex: 1;
+		}
+		.wrap div+div{
+			margin-left: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+			<div>DIV1</div>
+			<div>DIV2</div>
+			<div>DIV3</div>
+			<div>DIV4</div>
+		</div>	
+</body>
+</html>

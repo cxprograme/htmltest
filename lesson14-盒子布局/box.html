@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>盒子布局</title>
+	<style type="text/css">
+		/*定位布局 浮动布局，可以加margin实现自适应 破坏文档流，有两种方式  position  float 用了其中一个另一个就没有效果*/
+		*{margin:0;
+			padding:0;}
+		#wrap{
+			display: -moz-box;
+			display: -webkit-box;
+			display: box;
+		}
+		#left{
+			width: 200px;
+			background: red;
+		}
+		#middle{
+			width:-webkit-calc(100% - 400px);
+			width:-moz-calc(100% - 400px);
+			width:calc(100% - 400px);
+			background: green;
+			/*padding:20px;*/
+			/*background:#4684b2;
+			color:#fff;
+			width:-moz-calc(100% - 400px);
+			width:calc(100% - 400px);*/
+		}
+		#right{
+			width:200px;
+			background: blue;
+		}
+		#left,#right，#middle{box-sizing: border-box;padding:20px;}
+		li{
+			list-style: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id='left'>
+			<h1>左侧栏</h1>
+			<ul>
+				<li>导航</li>
+				<li>边框</li>
+				<li>布局</li>
+				<li>文本</li>
+			</ul>
+		</div>
+		<div id='middle'>this关键字是一个非常重要的语法点。毫不夸张地说，不理解它的含义，大部分开发任务都无法完成。
+
+			首先，this总是返回一个对象，简单说，就是返回属性或方法“当前”所在的对象。
+
+			this.property
+			上面代码中，this就代表property属性当前所在的对象。
+
+			下面是一个实际的例子。
+
+			var person = {
+			  name: '张三',
+			  describe: function () {
+			    return '姓名：'+ this.name;
+			  
+			</div>
+		<div id='right'>
+			<h1>右侧布局</h1>
+			<ul>
+				<li>背景渐变</li>
+				<li>flex布局</li>
+				<li>3D</li>
+				<li>matrix</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

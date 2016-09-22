@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选择器</title>
+	<style type="text/css">	
+		.nth div:first-child{
+			font-size: 4rem;
+		}
+		.nth p:nth-child(2){
+			color:red;
+		}
+		.nth p:nth-of-type(2){
+			font-size: 5rem;
+		}
+		.nth p:last-child{
+			font-size: 2rem;
+		}
+	</style>
+</head>
+<body>
+	<div class="nth">
+		<div>div</div>
+		<p>one</p>
+		<p>two</p>
+		<p>three</p>
+		<p>four</p>
+		<p>five</p>
+		<p>six</p>
+		<p>seven</p>
+	</div>
+</body>
+</html>

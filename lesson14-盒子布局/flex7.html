@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Justify-Content</title>
+	<style type="text/css">
+		*{margin:0px;padding: 0px}
+		.wrap{
+			width: 700px;
+			height:400px;
+			display: flex;
+			/*justify-content: flex-end;*/
+			/*justify-content: flex-start;*/
+			/*不留白 平铺*/
+			/*justify-content: space-between;*/
+			/*两头空距离 在平分*/
+			/*justify-content: space-around;*/
+			/*justify-content: center;*/
+
+			/*align-items: flex-start;*/
+			/*align-items: flex-end;*/
+			/*align-items: center;*/
+
+			/*align-items: baseline;*/
+			align-items: stretch;
+			border: 1px solid red;
+
+		}
+
+		.left{
+			background: red;
+		}
+		.content{
+			background: green;
+		}
+		.right{
+			background: blue;
+		}
+		.left,.content,.right{
+			width: 100px;
+			font-size: 2.0em;
+			font-weight: 700;
+			/*flex: 1;*/
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="left">	Left</div>
+		<div class="content">Content</div>
+		<div class="right">Right</div>
+	</div>
+</body>
+</html>

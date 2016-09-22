@@ -1,0 +1,132 @@
+<!doctype html><!--声明当前文档为html文档-->
+<html lang="en"><!--语言为英语-->
+	<head><!--头部-->
+		<meta charset="UTF-8"><!--字符编码：utf-8国际编码  gb2312中文编码-->
+		<meta name="Keywords" content="关键词">
+		<meta name="Description" content="描述">
+		<title>弹力球</title>
+		<style>/*css样式表的衣柜*/
+			*{
+				margin:0px;
+				padding:0px;
+
+			}
+			html{
+				height: 100%;
+			}
+			body{
+				height: 100%;
+				background: radial-gradient(#fff,#000);
+
+			}
+			.wrap{
+				position: absolute;
+				left:50%;
+				top:50%;
+
+				width:800px;
+				height:600px;
+				margin-left: -400px;
+				margin-top: -300px;
+			}
+			.red,.green,.blue{
+				margin: 0 20px;
+			}
+
+			.red{
+				float: left;
+				width: 200px;
+				height: 100%;
+				/*background: red;*/
+				position: relative;
+			}
+		
+
+			.green{
+				float: left;
+				width: 200px;
+				height: 100%;
+				/*background: green;*/
+				position: relative;
+			}
+			
+			.blue{
+				float: left;
+				width: 200px;
+				height: 100%;
+				/*background: blue;*/
+				position: relative;
+			}
+			.ball{
+				position: absolute;
+				left: 61%;
+				bottom:50px;
+				width:30px;
+				height: 30px;
+				border-radius: 30px;
+				animation:ball 600ms cubic-bezier(.06,.58,.79,.04) infinite;
+			}
+			.red .ball{
+				animation-delay: -400ms;
+				background: radial-gradient(#e2d1d1,#f63);
+			}
+			.green .ball{
+				animation-delay: -100ms;
+				background: radial-gradient(#e2d1d1,#2aad38);
+			}
+			.blue .ball{
+				animation-delay: -200ms;
+				background: radial-gradient(#e2d1d1,#339a94);
+			}
+			.shadow{
+				position: absolute;
+				left: 50%;
+				bottom: 0;
+				width: 75px;
+				height: 25px;
+				background: #000;
+				border-radius:50%;
+				animation:shadow 600ms cubic-bezier(.06,.58,.79,.04) infinite;
+			}
+
+			@keyframes ball{
+				0%{
+					transform: translateY(-150px);
+				}
+				100%{
+					transform: translateY(0px);
+				}
+			}
+
+			@keyframes shadow{
+				0%{
+					opacity: 0.5;
+					transform: scale(0.75);
+				}
+				100%{
+					opacity: 0.1;
+					transform: scale(1);
+				}
+			}
+    	</style>
+  </head>
+  <body>
+
+  <div class="wrap">
+  		<div class="red">
+  			<div class="ball"></div>
+  			<div class="shadow"></div>
+  		</div>
+
+  		<div class="green">
+  			<div class="ball"></div>
+  			<div class="shadow"></div>
+  		</div>
+
+  		<div class="blue">
+  			<div class="ball"></div>
+  			<div class="shadow"></div>
+  		</div>
+  </div>
+  </body>
+</html>

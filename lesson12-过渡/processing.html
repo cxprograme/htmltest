@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>完整的进度条</title>
+	<link rel="canonical" href="http://secure.cssdeck.com/labs/fancy-3d-button">
+	<style type="text/css">
+		*{margin:0;padding: 0px;}
+		.box{
+			/*width: 200px;*/
+			width: 0;
+			height: 20px;
+			border:1px solid #eee;
+			background-image: -webkit-repeating-linear-gradient(30deg,rgba(0,255,0,1) 0,#fc0 10px, #ccc 20px);
+			border-radius: 10px;
+			background-size:20px 20px;
+			transition: 10ms linear;
+		}
+		#play{
+			width: 60px;
+			height: 30px;
+			text-align: center;
+			border-radius: 15px;
+			box-shadow: 0 0 2px #ccc,0 0 4px #ffc,0 0 6px #fc0;
+		}
+		#pause{
+			display: block;
+			margin:0 auto;
+			width: 100px;
+			font-size: 2em;
+			text-align: center;
+			line-height: 2em;
+			font-weight: 700;
+			background-color: rgba(219,87,5,1);
+			border-radius: 8px;
+			box-shadow: 0 9px 0 rgba(219,31,5,1),0 9px 25px rgba(0,0,0,0.7);
+			color: rgba(255,255,255,1);
+			text-decoration: none;
+			transition: all .1s linear;
+			-webkit-transition:all .1s linear;
+			-moz-transition:all .1s linear;
+			-o-transition:all .1s linear;
+			-ms-transition:all .1s linear;
+			
+}
+
+#pause:active{
+	  -webkit-box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+    -moz-box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+    box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+    position: relative;
+    top: 6px;
+}
+a:-webkit-any-link {
+    color: -webkit-link;
+    text-decoration: underline;
+    cursor: auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<button id="play">播放</button>
+	<a id="pause" href="#">暂停</a>
+	<script type="text/javascript">
+		var box=document.getElementsByClassName('box')[0];
+		var play=document.getElementById('play');
+		var pause=document.getElementById('pause');
+		play.onclick=function(){
+			process();
+			addEvent(box,process);
+		}
+
+		pause.onclick=function(){
+			removeEvent(box,process);
+		}
+		function process(){
+			if(box.offsetWidth>=500){
+				removeEvent(box,process);
+				return;
+			}
+			box.style.width=box.offsetWidth+1+'px';
+		}
+
+		function addEvent(obj,fn){
+			obj.addEventListener('webkitTransitionEnd',fn);
+			obj.addEventListener('transition',fn);
+		}
+		function removeEvent(obj,fn){
+			obj.removeEventListener('webkitTransitionEnd',fn);
+			obj.removeEventListener('transition',fn);
+		}
+	</script>
+</body>
+</html>

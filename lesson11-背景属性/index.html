@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>背景属性</title>
+	<style type="text/css">
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		.box{
+			width: 400px;
+			height: 200px;
+			margin:100px auto;
+			border:1px solid #eee;
+			text-align: center;
+			line-height: 100px;
+			font-size: 100px;
+			font-weight: bold;
+			background:url("./images/2.jpg") no-repeat;
+			-webkit-background-clip: text;
+			color: rgba(0,0,0,0);
+			transition: all 2s;
+		}
+		.box:hover{
+			background-position: 200px 0px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		潭州学院
+	</div>
+</body>
+</html>

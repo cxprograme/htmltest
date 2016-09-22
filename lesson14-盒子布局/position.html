@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Position 两列自适应</title>
+	<style type="text/css">
+	*{
+		margin:0;
+		padding: 0;
+	}
+		#left{
+			position: absolute;
+			left:0;
+			padding: 0;
+			height: 100%;
+			width:200px;
+			background: red;
+		}
+		#right{
+			position: absolute;
+			left:200px;
+			top:0;
+			width:100%;
+			background:green;
+		}
+		#right li{
+			list-style:none;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div id='left'>
+			<h1>左侧栏</h1>
+			<ul>
+				<li>导航</li>
+				<li>边框</li>
+				<li>布局</li>
+				<li>文本</li>
+			</ul>
+		</div>
+		<div id='right'>
+			<h1>右侧布局</h1>
+			<ul>
+				<li>背景渐变</li>
+				<li>flex布局</li>
+				<li>3D</li>
+				<li>matrix</li>
+			</ul>
+			当前对象是person，所以就是调用person.name。由于对象的属性可以赋给另一个对象，所以属性所在的当前对象是可变的，即this的指向是可变的。首先，this总是返回一个对象，简单说，就是返回属性或方法“当前”所在的对象。this.property上面代码中，this就代表property属性当前所在的对象。下面是一个实际的例子。
+			var person = {
+			  name: '张三',
+			  describe: function () {
+			    return '姓名：'+ this.name;
+			  }
+			};
+
+		</div>
+	</div>
+</body>
+</html>

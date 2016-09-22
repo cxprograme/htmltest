@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var arr=[1,[2,3]];
+		function spliceArr(arr){
+			var str=arr.join(',');
+			var newArr=str.split(',');
+			var newArr1=[];
+			for(var i=0;i<newArr.length;i++){
+				newArr1.push(parseInt(newArr[i]));
+			}
+			console.log(typeof newArr);
+			return newArr1;
+		}
+
+		console.log(spliceArr(arr));
+
+		console.log("i'm a lasagna hog".split("").reverse().join(""));
+	</script>
+</body>
+</html>

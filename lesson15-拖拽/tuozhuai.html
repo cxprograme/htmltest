@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>拖拽事件</title>
+	<style type="text/css">
+		*{margin: 0;padding:0;}
+		#drag{
+			width: 100px;
+			height: 100px;
+			background: #ececec;
+		}
+		#box{
+			position: absolute;
+			width:500px;
+			height: 500px;
+			top:50%;
+			left:50%;
+			margin-left: -250px;
+			margin-top:-250px;
+			border:1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<div id="drag" draggable='true'></div>
+	<div id="box"></div>
+	<img src="image/1.jpg" width="50px" height="50px" id='imgs'>
+	<script type="text/javascript">
+		var drag=document.getElementById('drag');
+		var box=document.getElementById('box');
+
+		// 被拖拽元素事件
+		drag.ondragstart=function(ev){	//拖拽开始
+			var ev=ev||window.event;
+			ev.dataTransfer.setData('data','cx');
+			// ev.dataTransfer.effectAllowed='copyMove';
+			ev.dataTransfer.setDragImage('')
+			this.style.background='green';
+		}
+
+		drag.ondrag=function(){		//拖拽过程中
+			this.innerHTML='被拖拽中';
+		}
+		drag.ondragend=function(){
+			this.style.background='#ececec';	//拖拽结束
+			this.innerHTML='';
+		}
+		//目标元素
+		box.ondragenter=function(){		//进入目标元素
+			this.innerHTML='可以讲文件拖拽到这里';
+		}
+		box.ondragover=function(ev){		//滑过目标元素
+			var event=ev||window.event;
+			event.preventDefault();
+			this.style.background='red';
+		}
+		box.ondragleave=function(){		//离开目标元素
+			this.innerHTML='';
+			this.style.background='#fff';
+		}
+		box.ondrop=function(ev){
+			var ev=ev||window.event;
+			// alert('sdsd');
+			this.innerHTML=ev.dataTransfer.getData('data');
+		}
+
+		// 拖拽内容兼容
+	</script>
+</body>
+</html>

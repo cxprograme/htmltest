@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画</title>
+	<style type="text/css">
+		*{margin: 0;
+			padding: 0;}
+			.wrap{
+				position: absolute;
+				left:50%;
+				top: 50%;
+				margin-left: -150px;
+				margin-top: -150px;
+				width: 300px;
+				height: 300px;
+
+			}
+			.box{
+				/*position: absolute;
+				left:0;
+				top:0;*/
+				width: 273px;
+				height: 273px;
+				overflow: hidden;
+				background:url('./images/1.jpg');
+				-webkit-animation:mov 1s steps(30) infinite ;
+				animation-play-state: paused;
+			}
+				
+
+			input:checked~.box{
+					animation-play-state: running;
+			}
+			input:checked~.tl{display: none;}
+			input:checked~.tr{display: none;}
+			.tl,.tr{
+				margin-top:30px;
+			}
+			.tl{
+				display: block;
+				width: 30px;
+				height: 40px;
+				font-size: 40px;
+				float: left;
+			}
+			.tr{
+				display: block;
+				width: 30px;
+				height: 40px;
+				font-size: 40px;
+				float: right;
+			}
+
+			.tl:hover~.box{
+					
+					/*animation-play-state: running;
+					-webkit-animation-direction:alternate;
+					animation-iteration-count: infinite;*/
+					animation-play-state: running;
+					animation: antimov 2s steps(30) infinite;
+					/*animation-name: antimov;*/
+					animation-fill-mode: forwards;
+			}
+			.tr:hover~.box
+			{
+					animation-play-state: running;
+			
+			}
+
+			.tl:hover{
+				color:red;
+			}
+			.tr:hover{
+				color:red;
+			}
+
+
+			@keyframes mov{
+				0%{
+					background-position: 0px 0px;
+				}
+				100%{
+					background-position: 3000% 0;
+				}
+			}
+			@keyframes antimov{
+				0%{
+					background-position: 8192px 0px;
+				}
+				100%{
+					background-position: 0 0;
+				}
+			}
+
+	</style>
+</head>
+<body>
+<div class="wrap">
+		<input type="checkbox" checked id="auto">
+		<label for='auto' class="auto-create">Auto &#x21bb;</label>
+		<label for="l01" class="tl">&#x2190;</label>
+		<label for="l02" class="tr">&#x2192;</label>
+		<div class="box"></div>
+</div>
+</body>
+</html>

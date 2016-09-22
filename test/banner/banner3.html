@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自动轮播</title>
+	<style type="text/css">
+		*{margin:0;
+			padding:0;}
+		.wrap{
+			position: relative;
+			width: 538px;
+			height: 405px;
+			margin:0 auto;
+			overflow: hidden;
+		}
+		input[type='radio']{
+			display: none;
+		}
+		ul#images{width: 1000%;
+			height: 405px;
+			animation: mov 15s linear infinite;
+		}
+		ul#images li{float: left;list-style: none;}
+
+		ul#tag{
+			position: absolute;
+			left: 50%;
+			bottom:13px;
+			width: 500px;
+			height: 50px;
+			border:10px solid #eee;
+			margin-left: -260px;
+		}
+		ul#tag li {
+			float: left;
+			list-style: none;
+		}
+		ul#tag li img{
+			width: 100px;
+			height: 50px;
+		}
+		#l01:checked~#images{
+			
+			margin-left: 0px;
+		}#l02:checked~#images{
+
+			margin-left: -538px;
+		}#l03:checked~#images{
+
+			margin-left: -1076px;
+		}
+		#l04:checked~#images{
+
+			margin-left: -1614px;
+		}
+		#l05:checked~#images{
+
+			margin-left: -2151px;
+		}
+
+		.wrap:hover #images{
+			animation-play-state: paused;
+		}
+
+		@keyframes mov{
+			to{
+				margin-left: -500%;
+			}
+		}
+
+
+		
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<input type="radio" name="cx" id="l01">
+		<input type="radio" name="cx" id="l02">
+		<input type="radio" name="cx" id="l03">
+		<input type="radio" name="cx" id="l04">
+		<input type="radio" name="cx" id="l05">
+		
+		<ul id="images">
+			<li><img src="./images/1.jpg"></li>
+			<li><img src="./images/2.jpg"></li>
+			<li><img src="./images/3.jpg"></li>
+			<li><img src="./images/4.jpg"></li>
+			<li><img src="./images/5.jpg"></li>
+			<li><img src="./images/1.jpg"></li>
+			<li><img src="./images/2.jpg"></li>
+			<li><img src="./images/3.jpg"></li>
+			<li><img src="./images/4.jpg"></li>
+			<li><img src="./images/5.jpg"></li>
+		</ul>
+
+		<ul id=tag>
+			<li>
+				<label for="l01">
+					<img src="./images/1.jpg">
+				</label>
+			</li>
+			<li>
+				<label for="l02">
+					<img src="./images/2.jpg">
+				</label>
+			</li>
+			<li>
+				<label for="l03">
+					<img src="./images/3.jpg">
+				</label>
+			</li>
+			<li>
+				<label for="l04">
+					<img src="./images/4.jpg">
+				</label>
+			</li>
+			<li>
+				<label for="l05">
+					<img src="./images/5.jpg">
+				</label>
+			</li>
+		</ul>
+	
+		
+
+	</div>
+</body>
+</html>

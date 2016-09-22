@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Flex-wrap</title>
+	<style type="text/css">
+		*{margin:0px;padding: 0px}
+		.wrap{
+			width: 700px;
+			height:300px;
+			display: flex;
+			/*flex-wrap:wrap;*/
+			flex-wrap: wrap-reverse;
+
+		}
+
+		.left{
+			background: red;
+		}
+		.content{
+			background: green;
+		}
+		.right{
+			background: blue;
+		}
+		.left,.content,.right{
+			width: 250px;
+			font-size: 2.0em;
+			font-weight: 700;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="left">	Left</div>
+		<div class="content">Content</div>
+		<div class="right">Right</div>
+	</div>
+</body>
+</html>

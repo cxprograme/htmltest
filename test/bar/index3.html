@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画</title>
+	<style type="text/css">
+		*{margin: 0;
+			padding: 0;}
+			.wrap{
+				position: absolute;
+				left:50%;
+				top: 50%;
+				margin-left: -150px;
+				margin-top: -150px;
+				width: 300px;
+				height: 300px;
+
+			}
+			.box{
+				width: 273px;
+				height: 273px;
+				overflow: hidden;
+				background:url('./images/1.jpg');
+				
+				
+			}
+
+
+			input:checked~.box{
+					-webkit-animation:mov 1s steps(30) infinite;
+			}
+			input:checked~.tl{display: none;}
+			input:checked~.tr{display: none;}
+			.tl{
+				display: block;
+				width: 30px;
+				height: 40px;
+				font-size: 40px;
+				float: left;
+			}
+			.tr{
+				display: block;
+				width: 30px;
+				height: 40px;
+				font-size: 40px;
+				float: right;
+			}
+			.tl,.tr{
+				margin-top:30px;
+			}
+			
+			.tl:hover{
+				color:red;
+			}
+			.tr:hover{
+				color:red;
+			}
+
+			.tl:hover~.box{
+				-webkit-animation:antimov 2s steps(30) infinite ;	
+									
+			}
+			.tr:hover~.box
+			{
+				-webkit-animation:mov 2s steps(30) infinite ;	
+			
+			}
+
+
+			@keyframes antimov{
+					0%{
+						background-position: 8192px 0px;
+					}
+					100%{
+						background-position: 0 0;
+					}
+			}
+			@keyframes mov{
+					0%{
+						background-position: 0px 0px;
+					}
+					100%{
+						background-position: 3000% 0;
+					}
+				}
+
+	</style>
+</head>
+<body>
+<div class="wrap">
+		<input type="checkbox" checked id="auto">
+		<label for='auto' class="auto-create">Auto &#x21bb;</label>
+		<label for="l01" class="tl">&#x2190;</label>
+		<label for="l02" class="tr">&#x2192;</label>
+		<div class="box"></div>
+</div>
+</body>
+</html>

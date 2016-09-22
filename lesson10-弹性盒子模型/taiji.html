@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>太极</title>
+	<style type="text/css">
+		*{margin:0px;
+			padding: 0px;}
+		.taiji{
+			position: absolute;
+			left: 50%;
+			top:50%;
+
+			width: 300px;
+			height: 300px;
+			margin-left: -150px;
+			margin-top:-150px;
+			border:1px  solid #000;
+			border-radius: 300px;
+			transition: all 2s;
+			box-shadow: 0px 0px 2px #000, 0px 0px 4px #00f,0px 0px 6px #0ff;
+		}
+		.taiji:hover{
+			transform: rotate(360deg);
+		}
+		.lt{
+			position: absolute;
+			left: 0px;
+			top:0;
+			width: 150px;
+			height: 300px;
+			border-radius: 300px 0 0 300px;
+			background-color: #000;
+		}
+		.rb{
+			position: absolute;
+			right: 0px;
+			top:0;
+			width: 150px;
+			height: 300px;
+			border-radius: 0px 300px 300px 0px;
+		}
+		.ltc{
+			position: absolute;
+			left: 70px;
+			top: 0;
+			height: 0px;
+			width: 150px;
+			height: 150px;
+			border-right:1px solid #000;
+			border-radius: 150px;
+			background-color: #000;
+		}
+		.rbc{
+			position: absolute;
+			right: 70px;
+			bottom: 0;
+			height: 0px;
+			width: 150px;
+			height: 150px;
+			border-left:1px solid #000;
+			border-radius: 150px;
+			background-color: #fff;
+		}
+		.ltd{
+			position: absolute;
+			width: 30px;
+			height: 30px;
+			left:50%;
+			top:50%;
+			margin-left: -15px;
+			margin-top: -15px;
+			border-radius: 20px;
+			background-color: #fff;
+		}
+		.rgd{
+			position: absolute;
+			width: 30px;
+			height: 30px;
+			left:50%;
+			top:50%;
+			margin-left: -15px;
+			margin-top: -15px;
+			border-radius: 20px;
+			background-color: #000;
+		}
+	</style>
+</head>
+<body>
+	<div class="taiji">
+		<div class="lt">
+			<div class="ltc">
+				<div class="ltd"></div>
+			</div>
+		</div>
+		<div class="rb">
+			<div class="rbc">
+				<div class="rgd"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
