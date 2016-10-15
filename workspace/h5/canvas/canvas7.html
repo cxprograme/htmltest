@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>绘制线性渐变</title>
+  <style>
+		*{
+		margin:0;
+		padding:0;
+		}
+		body{
+			background:#000;
+		}
+		canvas{
+			position:absolute;
+			left:0;
+			top:0;
+			bottom:0;
+			right:0;
+			margin:auto;
+			background:#fff;
+		}
+  </style>
+ </head>
+ <body>
+	<canvas id="mycanvas" width=500 height=500></canvas>
+	<script>
+		var can=document.getElementById("mycanvas");
+		var cxt=can.getContext('2d');		//绘图环境
+		var color=cxt.createLinearGradient(0,0,500,500);
+		color.addColorStop(0,"#ff00cc");
+		color.addColorStop(0.5,"#6633ff");
+		color.addColorStop(1,"#00ffff");
+		cxt.fillStyle=color;
+		cxt.fillRect(0,0,500,500);
+	</script>
+ </body>
+</html>

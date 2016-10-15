@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>时钟</title>
+  <style>
+		*{
+		margin:0;
+		padding:0;
+	}
+	body{
+		background:#fff;
+	}
+	canvas{
+		background:#fff;
+		display:block;
+		margin:100px auto;
+	}
+  </style>
+ </head>
+ <body>
+	<canvas id="mycanvas" width='500' height='500'>
+	
+	</canvas>
+
+	<script>
+		var can=document.getElementById("mycanvas");
+		var cxt=can.getContext('2d');
+		function clock(){
+				cxt.clearRect(0,0,can.width,can.height);
+				var now=new Date();
+				var hours=now.getHours();
+				var min=now.getMinutes();
+				var sec=now.getSeconds();
+				min=min+sec/60;
+				hours=hours+min/60
+				cxt.lineWidth=2;
+				//绘制表盘 绘制分针刻度
+				for(var i=0;i<60;i++){
+					cxt.beginPath();
+				
+					cxt.strokeStyle="#000";
+					cxt.moveTo(250,250);
+					cxt.arc(250,250,100,i*6*Math.PI/180,(i+1)*6*Math.PI/180,false);
+					cxt.closePath();
+					cxt.stroke();
+				}
+				cxt.beginPath();
+				cxt.arc(250,250,95,0,360,false);
+				cxt.closePath();
+				cxt.fillStyle="#fff";
+				cxt.fill();
+			
+				//绘制时针刻度
+				for(var i=0;i<12;i++){
+					cxt.beginPath();
+					cxt.strokeStyle="#000";
+					cxt.moveTo(250,250);
+					cxt.arc(250,250,100,i*30*Math.PI/180,(i+1)*30*Math.PI/180,false);
+					cxt.lineWidth=3;
+					cxt.closePath();
+					cxt.stroke();
+				}
+				cxt.beginPath();
+				cxt.arc(250,250,90,0,360,false);
+				cxt.closePath();
+				cxt.fillStyle="#fff";
+				cxt.fill();
+
+				//绘制时针
+
+				cxt.beginPath();
+				cxt.strokeStyle="#000";
+				cxt.moveTo(250,250);
+				cxt.arc(250,250,75,(-90+hours*30)*Math.PI/180,(-90+hours*30)*Math.PI/180,false);
+				cxt.lineWidth=5;
+				cxt.closePath();
+				cxt.stroke();
+
+				
+				//绘制分针
+
+				cxt.beginPath();
+				cxt.strokeStyle="#000";
+				cxt.moveTo(250,250);
+				cxt.arc(250,250,85,(-90+min*6)*Math.PI/180,(-90+min*6)*Math.PI/180,false);
+				cxt.lineWidth=3;
+				cxt.closePath();
+				cxt.stroke();
+
+				//绘制秒针
+				cxt.beginPath();
+				cxt.moveTo(250,250);
+				cxt.arc(250,250,90,(-90+sec*6)*Math.PI/180,(-90+sec*6)*Math.PI/180,false);
+				cxt.lineWidth=2;
+				cxt.strokeStyle="#f00";
+				cxt.closePath();
+				cxt.stroke();
+
+				//绘制中心
+				cxt.beginPath();
+				cxt.arc(250,250,5,0,360,false);
+				cxt.fillStyle="#000";
+				cxt.closePath();
+				cxt.fill();
+		}
+		clock();
+		setInterval(clock,1000)
+
+	
+	</script>
+ </body>
+</html>

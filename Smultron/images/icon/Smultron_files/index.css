@@ -1,0 +1,251 @@
+/*Header Start*/
+.pageHeader{
+position: relative;
+width: 100%;
+height:100vh;
+background: #181818;
+min-height: 480px;
+padding-top:80px;
+box-sizing: border-box;
+}
+.pageHeader .headNav{
+position: absolute;
+left: 0;
+top:0;
+width: 100%;
+height: 80px;
+background: rgba(255,255,255,0.07);
+z-index: 10000;
+}
+.pageHeader .headNav .logo{
+width:130px;
+height: 25px;
+background: url(../images/header/logo.png);
+float: left;
+margin:25px 0 0 25px;
+
+}
+.pageHeader .headNav .menu{
+margin:23px 20px 0 10px;
+float: right;
+}
+.pageHeader .headNav .menu ul li{
+display: inline-block;
+margin:0 0 0 15px;
+}
+.pageHeader .headNav .menu ul li a{
+display: block;
+width:100%;
+height: 33px;
+line-height: 33px;
+font-size: 1.4rem;
+font-size: 14px;
+font-weight: bold;
+color:#fff;
+perspective:1000px;
+}
+.pageHeader .headNav .menu ul li a span{
+display: block;
+height: 100%;
+padding: 0 0.75rem;
+line-height: 33px;
+position: relative;
+transform-style: preserve-3d;
+transform-origin: 50% 0 0 ;
+transition: all 0.5s;
+border:2px solid transparent;
+}
+.pageHeader .headNav .menu ul li a span:before{
+content: attr(data-hover);
+position: absolute;
+display: block;
+left: -2px;
+top:100%;
+right: -2px;
+height: 33px;
+color:#fff;
+padding: 0 0.75rem;
+line-height: 33px;
+background: #e44e27;
+transform-origin: 50% 0 0 ;
+transform:rotateX(-90deg);
+opacity: 0;
+transition: all 0.5s;
+border:2px solid #e44e27;
+}
+.pageHeader .headNav .menu ul li a:hover span{
+transform:rotateX(90deg);
+border-color:#e44e27;
+}
+.pageHeader .headNav .menu ul li a:hover span:before{
+opacity: 1;
+}
+
+
+
+
+.simple{
+	width: 100%;
+	height: 100%;
+	max-width: 640px;
+	margin:0 auto;
+
+}
+.simple .simple-item {
+	position: relative;
+	width: 100%;
+	height: 33.3%;
+	min-height: 110px;
+	border-top:1px solid #2d2d32;
+	z-index: 10000;
+
+}
+.simple .simple-item .anim{
+	float: left;
+	left: 0;
+	top:50%;
+	transform: translate(0,-50%);
+	z-index: 1000;
+}
+.simple .simple-item .anim1{
+	position: relative;
+	width: 100px;
+	height: 89px;
+}
+.simple .simple-item .anim2{
+	position: relative;
+	width: 100px;
+	height: 100px;
+}
+.simple .simple-item .anim3{
+	position: relative;
+	width: 100px;
+	height: 110px;
+}
+.simple .simple-item .anim a{
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.simple .simple-item .anim img{
+	position: absolute;
+	width: 100%;
+	transition: all 0.5s;
+}
+.simple .simple-item .anim .imgs1 img:nth-child(2){
+	left:0;
+	top:50%;
+	opacity: 0;
+	transform:scale(0.2);
+}
+.simple .simple-item .anim .imgs1 img:nth-child(3){
+	left:30%;
+	bottom:30%;
+	opacity: 0;
+	transform:scale(0.2);
+
+}
+.simple .simple-item .anim .imgs1 img:nth-child(4){
+	right:30%;
+	bottom:30%;
+	opacity: 0;
+	transform:scale(0.2);
+}
+.simple .simple-item .anim .imgs2 img:nth-child(2){
+	left:0;
+	top:50%;
+	opacity: 0;
+	transform:scale(0.2);
+}
+.simple .simple-item .anim .imgs2 img:nth-child(3){
+	left:0;
+	bottom:50%;
+	opacity: 0;
+	transform:scale(0.2);
+}
+.simple .simple-item .anim .imgs3 img:nth-child(2){
+	left:36%;
+	bottom:30%;
+	opacity: 0;
+	transform:scale(0.2) rotate(-70deg);
+}
+.simple .simple-item .anim .imgs3 img:nth-child(3){
+	left:0;
+	bottom:50%;
+	opacity: 0;
+	transform:scale(0.2) rotate(0deg);
+}
+.simple .simple-item .anim .imgs3 img:nth-child(4){
+	right:26%;
+	bottom:30%;
+	opacity: 0;
+	transform:scale(0.2) rotate(70deg);
+}
+
+
+
+
+.simple .simple-item:hover div.anim .imgs1 img:nth-child(2){
+	left:0;
+	top:0;
+	opacity: 1;
+	transform:scale(1)
+}
+.simple .simple-item:hover div.anim .imgs1 img:nth-child(3){
+	left:0;
+	bottom:0;
+	opacity: 1;
+	transform:scale(1)
+}
+.simple .simple-item:hover div.anim .imgs1 img:nth-child(4){
+	right:0;
+	bottom:0;
+	opacity: 1;
+	transform:scale(1)
+}
+.simple .simple-item:hover div.anim .imgs2 img:nth-child(2){
+	left:0;
+	top:0;
+	opacity: 1;
+	transform:scale(1)
+}
+.simple .simple-item:hover div.anim .imgs2 img:nth-child(3){
+	left:0;
+	bottom:0;
+	opacity: 1;
+	transform:scale(1)
+}
+.simple .simple-item:hover div.anim .imgs3 img:nth-child(2){
+	left:0;
+	bottom:0;
+	opacity: 1;
+	transform:scale(1) rotate(0deg);
+}
+.simple .simple-item:hover div.anim  .imgs3 img:nth-child(3){
+	left:0;
+	bottom:0;
+	opacity: 1;
+	transform:scale(1) rotate(0deg);
+}
+.simple .simple-item:hover div.anim .imgs3 img:nth-child(4){
+	right:0;
+	bottom:0;
+	opacity: 1;
+	transform:scale(1) rotate(0deg);
+}
+
+
+.simple .simple-item .title{
+		position: absolute;
+		left: 0;
+		top:50%;
+		transform: translate(0,-50%);
+	    padding-left: 30%;
+		color: #fff;
+		font-size:20px;
+		
+
+}
+		
+/*Header End*/

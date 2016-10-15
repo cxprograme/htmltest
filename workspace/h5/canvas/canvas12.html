@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ <style>
+		*{
+		margin:0;
+		padding:0;
+		}
+		body{
+			background:#000;
+		}
+		canvas{
+			position:absolute;
+			left:0;
+			top:0;
+			bottom:0;
+			right:0;
+			margin:auto;
+			background:#fff;
+		}
+  </style>
+ </head>
+ <body>
+	<canvas id="mycanvas" width=500 height=500></canvas>
+	<script>
+		var can=document.getElementById("mycanvas");
+		var cxt=can.getContext('2d');		//绘图环境
+		cxt.beginPath();
+		cxt.moveTo(100,300);
+		cxt.quadraticCurveTo(50,50,200,200);
+		cxt.stroke();
+	</script>
+ </body>
+</html>

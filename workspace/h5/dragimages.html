@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>拖拽图片</title>
+  <style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		.box{
+			
+			width:100px;
+			height:100px;
+			background:blue;
+		}
+
+		.container{
+		position:relative;
+			width:400px;
+			height:400px;
+			border:1px solid #000;
+			margin:0 auto;
+
+		}
+		.container span{
+			position:absolute;
+			left:0;
+			top:0;
+			right:0;
+			bottom:0;
+			width:192px;
+			height:56px;
+			margin:auto;
+			border:1px solid #000;
+			display:none;
+		}
+		img{
+			width；100px;
+			height:100px;
+		}
+  </style>
+ </head>
+ <body>
+	
+	<div class="container"><span>请将文件拖到此处！</span></div>
+	<script>
+		var container=document.getElementsByClassName("container")[0];
+		var span=document.getElementsByTagName("span")[0];
+
+		//目标对象
+		container.ondragenter=function(ev){
+			//span.style.display="block";
+		
+		}
+		//拖拽过程中
+		container.ondragover=function(ev){
+			var ev=ev||window.event;
+			ev.preventDefault();
+		//	span.style.display='block';
+		}
+		//离开目标元素
+		container.ondragleave=function(){
+			//span.style.display="none";
+		}
+
+		//
+		container.ondrop=function(ev){
+			var ev=ev||window.event;
+			ev.preventDefault();
+			//span.style.display="none";
+			var file=ev.dataTransfer.files;
+			
+			for(var i=0;i<file.length;i++){
+				var read=new  FileReader();
+				read.readAsDataURL(file[i]);
+				read.onload=function(){
+				var img=document.createElement("img");
+				img.src=this.result;
+				container.appendChild(img);
+					}
+			}
+			
+
+
+		
+		}
+
+	</script>
+ </body>
+</html>

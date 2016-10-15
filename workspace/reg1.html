@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>正则表达式实例</title>
+ </head>
+ <body>
+	<script>
+
+		//+   {1,}
+		//?	  {0,1}
+		//*		{0,}
+
+
+		/*var reg=/^[012345678]$/g;
+		var str='0';
+		alert(reg.test(str));
+		console.log(str.match(reg));*/
+
+		
+		//var reg=/^\d+$/;
+		//var str='2121';
+		//alert(reg.test(str));
+
+		//var reg=/^\d*/;
+		//var str='121343445';
+		//alert(reg.test(str));
+
+
+		//var reg=/travell?er/;
+		//var str='traveller';
+		//var str="traveler";
+		//alert(reg.test(str));
+
+
+		//var reg=/https?/;
+		//var str='http';
+		//alert(reg.test(str));
+
+		//[^>] 匹配除了>的其他所有字符 
+		//var reg=/^<[^>]+>$/;
+		//var str='< >';
+		//alert(reg.test(str));
+
+
+		//var reg=/^\s*<(\w+|!)[^>]*>$/;
+		//var str=" < !>";
+		//alert(reg.test(str));
+
+		var reg=/(\w{1,2}|!)/;
+		var str="srss";
+		alert(reg.test(str));
+		alert(str.match(reg));
+	</script>
+ </body>
+</html>

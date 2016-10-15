@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>刮刮乐</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+
+		}
+	</style>
+</head>
+<body>
+	<img src="images/9.jpg" id='img'>
+	<script type="text/javascript">
+		
+		var oimg=document.getElementById("img");
+		/*
+			complete 判断是否加载完成(加载完成返回true)
+			onerror 图片加载失败时调用
+			onload 图片加载完成时候调用
+			readyState="complete"	
+			readyState="loading"
+		 */
+		if (oimg.complete ||  oimg.readyState =="complete"||oimg.readyState=="loading") {
+
+				draw();
+		}else{
+			oimg.onload=draw;
+		}
+
+		function draw(){
+			var can=document.createElement("canvas");
+			can.style.position="absolute";
+			can.style.top=oimg.offsetTop+"px";
+			can.style.left=oimg.offsetLeft+"px";
+			can.width=oimg.width;			//设置width时不需要加px
+			can.height=oimg.height;
+
+			oimg.parentNode.insertBefore(can,oimg);
+
+			var cxt=can.getContext("2d");
+		
+			// 绘制阴影
+			cxt.beginPath();
+			cxt.fillStyle="#bbb";
+			cxt.fillRect(0,0,can.width,can.height);
+			//合成覆盖显示透明色
+			cxt.globalCompositeOperation="destination-out";
+			cxt.strokeStyle="#eee";
+			cxt.lineCap="round";
+			cxt.lineWidth=30;
+			// cxt.closePath();
+			can.onmousedown=function(ev){
+				var This=this;
+				var ev=ev || window.event;
+				var x=ev.pageX-can.offsetLeft;
+				var y=ev.pageY-can.offsetTop;
+				console.log(x+",,,"+y);
+				cxt.beginPath();
+				cxt.arc(x,y,15,0,Math.PI*2,false);
+				cxt.fill();
+				this.onmousemove=function(ev){
+					var ev=ev||window.event;
+					cxt.beginPath();
+					cxt.moveTo(x,y);
+					cxt.lineTo(ev.pageX-can.offsetLeft,ev.pageY-can.offsetTop);
+					x=ev.pageX-can.offsetLeft;
+				    y=ev.pageY-can.offsetTop;
+					cxt.stroke();
+				};
+
+				this.onmouseup=function(){
+					This.onmousemove=null;
+					This.onmouseup=null;
+
+				}
+
+			};
+
+		}
+	</script>
+
+</body>
+</html>

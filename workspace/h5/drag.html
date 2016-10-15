@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>拖拽</title>
+  <style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		.box{
+			width:100px;
+			height:100px;
+			background:blue;
+		}
+
+		.container{
+			width:400px;
+			height:400px;
+			border:1px solid #000;
+			margin:0 auto;
+		}
+  </style>
+ </head>
+ <body>
+	<div class="box" draggable="true"></div>
+	<div class="container"></div>
+	<script>
+		var box=document.getElementsByClassName("box")[0];
+		var container=document.getElementsByClassName("container")[0];
+		//被拖动的对象
+		box.ondragstart=function(ev){
+			var ev=ev||window.event;
+			ev.dataTransfer.setData('data','cx');
+			ev.dataTransfer.effectAllowed="copyLink";
+			this.style.background="red";
+		}
+		//拖拽中
+		box.ondrag=function(){
+			this.innerHTML="拖拽中";
+		}
+		
+		//拖拽结束
+		box.ondragend=function(){
+			this.innerHTML="";
+			this.style.background="blue";
+		}
+
+
+		//目标对象
+		container.ondragenter=function(){
+			this.innerHTML="将图片拖放到此处";
+		}
+		//拖拽过程中
+		container.ondragover=function(ev){
+			var ev=ev||window.event;
+			ev.preventDefault();
+			this.style.background="yellow";
+		}
+		//离开目标元素
+		container.ondragleave=function(){
+			this.innerHTML="";
+			this.style.background="none";
+		}
+
+		//
+		container.ondrop=function(ev){
+			var ev=ev||window.event;
+			var val=ev.dataTransfer.getData("data");
+			this.innerHTML=val;
+		}
+
+	</script>
+ </body>
+</html>

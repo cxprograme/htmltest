@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>画布</title>
+  <style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	body{
+		background:#fff;
+	}
+	canvas{
+		background:#c0c0c0;
+		display:block;
+		margin:100px auto;
+	}
+  </style>
+ </head>
+ <body>
+	<canvas id="mycanvas" width="500" height="500">
+		
+	</canvas>
+	<script>
+
+		//stroke fill绘制区分前后，后面一个会将前面一个覆盖，fill的起点是按照设定的起点	stroke的起点是按照线的中心点
+
+		var can=document.getElementById("mycanvas");
+		var cxt=can.getContext("2d");
+		cxt.beginPath();
+		cxt.moveTo(250,250);
+		cxt.arc(250,250,100,0,Math.PI*0.5,false);// true表示逆时针 false表示顺时针 绘制园  弧度的计算公式 角度*Math.PI/180
+		cxt.closePath();
+		cxt.stroke();
+		cxt.fillStyle="#00ff66";
+		cxt.fill();
+
+		cxt.beginPath();
+		cxt.moveTo(150,150);
+		cxt.arc(150,150,100,-Math.PI/2,-Math.PI,true);		//绘制园  弧度的计算公式 角度*Math.PI/180
+		cxt.closePath();
+		cxt.stroke();
+		cxt.fillStyle="#00ff66";
+		cxt.fill();
+	</script>
+ </body>
+</html>

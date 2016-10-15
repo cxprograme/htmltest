@@ -1,0 +1,716 @@
+/*Header Start*/
+
+.pageHeader {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #181818;
+    min-height: 480px;
+    padding-top: 80px;
+    box-sizing: border-box;
+    z-index: 2000;
+}
+
+.pageHeader .headNav {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.07);
+    z-index: 10000;
+}
+
+.pageHeader .headNav .logo {
+    width: 130px;
+    height: 25px;
+    background: url(../images/header/logo.png);
+    float: left;
+    margin: 25px 0 0 25px;
+}
+
+.pageHeader .headNav .menu {
+    margin: 23px 20px 0 10px;
+    float: right;
+}
+
+.pageHeader .headNav .menu ul li {
+    display: inline-block;
+    margin: 0 0 0 15px;
+}
+
+.pageHeader .headNav .menu ul li a {
+    display: block;
+    width: 100%;
+    height: 33px;
+    line-height: 33px;
+    font-size: 1.4rem;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    perspective: 1000px;
+}
+
+.pageHeader .headNav .menu ul li a span {
+    display: block;
+    height: 100%;
+    padding: 0 0.75rem;
+    line-height: 33px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform-origin: 50% 0 0;
+    transition: all 0.5s;
+    border: 2px solid transparent;
+}
+
+.pageHeader .headNav .menu ul li a span:before {
+    content: attr(data-hover);
+    position: absolute;
+    display: block;
+    left: -2px;
+    top: 100%;
+    right: -2px;
+    height: 33px;
+    color: #fff;
+    padding: 0 0.75rem;
+    line-height: 33px;
+    background: #e44e27;
+    transform-origin: 50% 0 0;
+    transform: rotateX(-90deg);
+    opacity: 0;
+    transition: all 0.5s;
+    border: 2px solid #e44e27;
+}
+
+.pageHeader .headNav .menu ul li a:hover span {
+    transform: rotateX(90deg);
+    border-color: #e44e27;
+}
+
+.pageHeader .headNav .menu ul li a:hover span:before {
+    opacity: 1;
+}
+
+.simple {
+    width: 100%;
+    height: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.simple .simple-item {
+    position: relative;
+    width: 100%;
+    height: 33.3%;
+    min-height: 110px;
+    border-top: 1px solid #2d2d32;
+    z-index: 10000;
+}
+
+.simple .simple-item .anim {
+    float: left;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    z-index: 1000;
+}
+
+.simple .simple-item .anim1 {
+    position: relative;
+    width: 100px;
+    height: 89px;
+}
+
+.simple .simple-item .anim2 {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.simple .simple-item .anim3 {
+    position: relative;
+    width: 100px;
+    height: 110px;
+}
+
+.simple .simple-item .anim a {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.simple .simple-item .anim img {
+    position: absolute;
+    width: 100%;
+    transition: all 0.5s;
+}
+
+.simple .simple-item .anim .imgs1 img:nth-child(2) {
+    left: 0;
+    top: 50%;
+    opacity: 0;
+    transform: scale(0.2);
+}
+
+.simple .simple-item .anim .imgs1 img:nth-child(3) {
+    left: 30%;
+    bottom: 30%;
+    opacity: 0;
+    transform: scale(0.2);
+}
+
+.simple .simple-item .anim .imgs1 img:nth-child(4) {
+    right: 30%;
+    bottom: 30%;
+    opacity: 0;
+    transform: scale(0.2);
+}
+
+.simple .simple-item .anim .imgs2 img:nth-child(2) {
+    left: 0;
+    top: 50%;
+    opacity: 0;
+    transform: scale(0.2);
+}
+
+.simple .simple-item .anim .imgs2 img:nth-child(3) {
+    left: 0;
+    bottom: 50%;
+    opacity: 0;
+    transform: scale(0.2);
+}
+
+.simple .simple-item .anim .imgs3 img:nth-child(2) {
+    left: 36%;
+    bottom: 30%;
+    opacity: 0;
+    transform: scale(0.2) rotate(-70deg);
+}
+
+.simple .simple-item .anim .imgs3 img:nth-child(3) {
+    left: 0;
+    bottom: 50%;
+    opacity: 0;
+    transform: scale(0.2) rotate(0deg);
+}
+
+.simple .simple-item .anim .imgs3 img:nth-child(4) {
+    right: 26%;
+    bottom: 30%;
+    opacity: 0;
+    transform: scale(0.2) rotate(70deg);
+}
+
+.simple .simple-item:hover div.anim .imgs1 img:nth-child(2) {
+    left: 0;
+    top: 0;
+    opacity: 1;
+    transform: scale(1)
+}
+
+.simple .simple-item:hover div.anim .imgs1 img:nth-child(3) {
+    left: 0;
+    bottom: 0;
+    opacity: 1;
+    transform: scale(1)
+}
+
+.simple .simple-item:hover div.anim .imgs1 img:nth-child(4) {
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+    transform: scale(1)
+}
+
+.simple .simple-item:hover div.anim .imgs2 img:nth-child(2) {
+    left: 0;
+    top: 0;
+    opacity: 1;
+    transform: scale(1)
+}
+
+.simple .simple-item:hover div.anim .imgs2 img:nth-child(3) {
+    left: 0;
+    bottom: 0;
+    opacity: 1;
+    transform: scale(1)
+}
+
+.simple .simple-item:hover div.anim .imgs3 img:nth-child(2) {
+    left: 0;
+    bottom: 0;
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+.simple .simple-item:hover div.anim .imgs3 img:nth-child(3) {
+    left: 0;
+    bottom: 0;
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+.simple .simple-item:hover div.anim .imgs3 img:nth-child(4) {
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+.simple .simple-item .title {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    padding-left: 30%;
+    color: #fff;
+    font-size: 20px;
+}
+
+.canvasBg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#canvas {
+    display: block;
+}
+
+
+/*Header End*/
+
+
+/*main Nav start*/
+
+main {
+    display: block;
+    position: relative;
+}
+
+main .fixedNav {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    /*background: red;*/
+    z-index: 1000;
+}
+
+main .fixedNav a.icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80px;
+    height: 80px;
+    background: #eee url(../images/icon/gui-ico.png) no-repeat -150px -50px;
+    z-index: 1002;
+}
+
+main .fixedNav a#navTrigger {
+    left: 81px;
+    top: 0;
+    background: #eee url(../images/icon/ico-navtrigger.png) no-repeat;
+    transform: rotate(0deg);
+    transition: 1s;
+}
+
+main .fixedNav .navContainer {
+    width: 100%;
+    height: 100%;
+    transition: 0.6s;
+    transform: translate3d(0, -80px, 0);
+}
+
+main .fixedNav .navContainer .nav-menu {
+    position: relative;
+    background: 0 0;
+    float: right;
+    width: 98%;
+    /*max-width: 1240px;*/
+    margin: 18px 20px 0 10px;
+    padding: 0;
+    transform: none!important;
+    opacity: 1!important;
+    text-align: right;
+    z-index: 2;
+}
+
+main .fixedNav .navContainer .nav-menu ul.menu {}
+
+main .fixedNav .navContainer .nav-menu ul.menu li {
+    display: inline-block;
+    margin: 0 0 0 15px;
+    transform: translate3d(0, -270px, 0);
+    transition: 0.6s;
+}
+
+main .fixedNav .navContainer .nav-menu ul.menu li:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+main .fixedNav .navContainer .nav-menu ul.menu li:nth-child(2) {
+    transition-delay: 0.3s;
+}
+
+main .fixedNav .navContainer .nav-menu ul.menu li:nth-child(3) {
+    transition-delay: 0.5s;
+}
+
+main .fixedNav .navContainer .nav-menu ul.menu li:nth-child(4) {
+    transition-delay: 0.7s;
+}
+
+main .fixedNav .navContainer .nav-menu ul.menu li:nth-child(5) {
+    transition-delay: 0.9s;
+}
+
+main .fixedNav .navContainer .nav-menu ul.menu-show li {
+    transform: translate3d(0, 0, 0);
+}
+
+main .fixedNav .navContainer .nav-menu ul.menu li a {
+    display: inline-block;
+    height: 37px;
+    color: #000;
+    perspective: 1000px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+main .fixedNav .navContainer .nav-menu ul.menu li a span {
+    position: relative;
+    display: inline-block;
+    height: 37px;
+    line-height: 37px;
+    font-size: 1.4rem;
+    padding: 0 0.75rem;
+    transform-style: preserve-3d;
+    transform-origin: 50% 0 0;
+    transition: all 0.5s;
+    border: 2px solid transparent;
+}
+
+main .fixedNav .navContainer .nav-menu ul.menu li a span:before {
+    content: attr(data-hover);
+    position: absolute;
+    left: -2px;
+    right: -2px;
+    top: 100%;
+    padding: 0 0.75rem;
+    background: #e22e27;
+    transform-origin: 50% 0 0;
+    transform: rotateX(-90deg);
+    opacity: 0;
+    transition: all 0.5s;
+    border: 2px solid #e44e27;
+}
+
+main .fixedNav .navContainer .nav-menu ul.menu li a:hover span {
+    transform: rotateX(90deg);
+    border-color: #e44e27;
+}
+
+main .fixedNav .navContainer .nav-menu ul.menu li a:hover span:before {
+    opacity: 1;
+}
+
+.morphShape {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/*main Nav End*/
+
+
+/*main section start*/
+
+
+/*main section {
+    height: 500px;
+}*/
+
+main .whatwedo {}
+
+main .whatwedo:before {
+    content: "";
+    display: table;
+}
+
+main section h2.sectionHeader {
+    text-transform: uppercase;
+    font-size: 2.8rem;
+    font-size: 28px;
+    text-align: center;
+    margin: 2em auto;
+    font-weight: 700;
+    transition: all 0.6s;
+}
+
+main .whatwedo article {
+    padding: 80px 0;
+}
+
+main .whatwedo article:nth-child(2n) {
+    background-color: #f7f9fa;
+}
+
+main .whatwedo article .layout {
+    position: relative;
+    width: 92%;
+    margin: 0 auto;
+    max-width: 960px;
+    padding-left: 400px;
+    box-sizing: border-box;
+}
+
+main .whatwedo article .layout h3 {
+    text-transform: uppercase;
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin-bottom: 0.35rem;
+}
+
+main .whatwedo article .layout p {
+    color: #605e5e;
+    font-size: 1.4rem;
+    line-height: 2.2;
+}
+
+main .whatwedo article .layout footer {
+    margin-top: 1.1rem;
+}
+
+main .whatwedo article .layout footer ul li {
+    display: inline-block;
+    font-size: 1.4rem;
+    line-height: 18px;
+    vertical-align: baseline;
+}
+
+main .whatwedo article .layout footer ul li:after {
+    content: "|";
+    display: inline-block;
+    /*margin:0 .5rem 0 .75rem;*/
+    margin: 0 .5em 0.3em .67em;
+    height: 100%;
+    color: #d7d7d8;
+    vertical-align: middle;
+}
+
+main .whatwedo article .layout footer ul li:last-child:after {
+    content: "";
+}
+
+main .whatwedo article .layout .ico {
+    position: absolute;
+    top: 0;
+    right: 50%;
+    width: 224px;
+    height: 200px;
+    margin: 0 auto 1em;
+    margin-right: 158px;
+}
+
+main .whatwedo article#frontend .layout .ico {
+    background: url("../images/whatwedo/ico1.png") center bottom no-repeat;
+}
+
+main .whatwedo article#end .layout .ico {
+    background: url("../images/whatwedo/ico2.png") center bottom no-repeat;
+}
+
+main .whatwedo article#back .layout .ico {
+    background: url("../images/whatwedo/ico3.png") center bottom no-repeat;
+}
+
+
+/*main section end*/
+
+
+/*main project start*/
+
+.projects {
+    width: 100%;
+}
+
+.projects .dragGallery {
+    position: relative;
+    width: 100%;
+    height: 680px;
+    overflow: hidden;
+}
+
+.projects .dragGallery .dragGallery-grid {
+    width: 3780px;
+    height: 100%;
+     perspective: 1000px;
+}
+
+.projects .dragGallery .dragGallery-grid .gridItem {
+    width: 420px;
+    height: 100%;
+    float: left;
+ 
+   
+}
+
+.projects .dragGallery .dragGallery-grid .gridItem .gridSubItem {
+    width: 420px;
+    height: 340px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    transform-style: preserve-3d;
+    transition: all 1s;
+}
+
+.portfolioItem-content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0);
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.projects .dragGallery .dragGallery-grid .gridItem .gridSubItem .portfolioItem-content .t {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.projects .dragGallery .dragGallery-grid .gridItem .gridSubItem .portfolioItem-content .t .tc {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.portfolioItem-content .t .tc strong {
+    font-size: 2.2rem;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 34px;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.portfolioItem-content .t .tc .info {
+    max-height: 0px;
+    opacity: 0;
+    transform: translateY(-40px);
+    transition: all 0.6s;
+}
+
+.portfolioItem-content .t .tc .info ul {
+    margin: 0.6rem 0;
+}
+
+.portfolioItem-content .t .tc .info ul li {
+    display: inline-block;
+    font-size: 12px;
+    font-size: 1.2rem;
+    margin: 0 .25rem;
+}
+
+.gridItem .ico-rwd {
+    display: block;
+    width: 84px;
+    height: 24px;
+    margin: 1em auto 1em;
+    text-indent: -9999px;
+    background: url(../images/icon/ico-rwd.png) no-repeat;
+}
+
+.gridSubItem:hover div.portfolioItem-content {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.gridSubItem:hover .portfolioItem-content .t .tc strong {
+    opacity: 1;
+}
+
+.gridSubItem:hover .portfolioItem-content .t .tc .info {
+    max-height: 200px;
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.projects .dragcontrols {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    cursor: pointer;
+}
+
+.projects .dragcontrols .dragGallery-track {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    /*top: 50%;*/
+    height: 1px;
+    background: url(../images/icon/bg-dragtrack.png) repeat-x;
+    z-index: 10;
+}
+
+.projects .dragcontrols .dragGallery-dragger {
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 23px;
+    background: url(../images/icon/gui-ico.png) no-repeat -80px -50px #bac614;
+    border-radius: 12px;
+    margin: -11px 0 0 -20px;
+    transform: translateX(70px);
+    z-index: 11;
+    transition: background .2s;
+}
+
+.projects .dragcontrols .dragGallery-prev {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+    background: url(../images/icon/gui-ico.png) no-repeat 0 -50px #bac614;
+    z-index: 11;
+    transition: all .2s;
+}
+
+.projects .dragcontrols .dragGallery-next {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+    background: url(../images/icon/gui-ico.png) no-repeat -40px -50px #bac614;
+    z-index: 11;
+    transition: all .2s;
+}
+
+.projects .dragcontrols .dragGallery-next:hover {
+    background-color: #8aa300;
+}
+
+.projects .dragcontrols .dragGallery-prev:hover {
+    background-color: #8aa300;
+}
+
+.projects .dragcontrols .dragGallery-dragger:hover {
+    background-color: #8aa300;
+}
+
+
+/*main project end*/

@@ -1,0 +1,98 @@
+<!doctype html><!--声明当前文档为html文档-->
+<html lang="en"><!--语言为英语-->
+	<head><!--头部-->
+		<meta charset="UTF-8"><!--字符编码：utf-8国际编码  gb2312中文编码-->
+		<meta name="Keywords" content="关键词">
+		<meta name="Description" content="描述">
+		<title>Document</title>
+		<style>/*css样式表的衣柜*/
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		.wrap{
+			width:500px;
+			height:500px;
+			margin:50px auto;
+		}
+		ul li{
+			list-style:none;
+			width:500px;
+			height:50px;
+			color:#fff;
+			text-align:center;
+			line-height:50px;
+			font-size:40px;
+			font-weight:bold;
+		}
+		</style>
+	</head>
+	<body><!--身体-->
+		<div class="wrap">
+			<ul id="box">
+				<li style="background:#f3f" draggable="true">1</li>
+				<li style="background:#ff6" draggable="true">2</li>
+				<li style="background:#c60" draggable="true">3</li>
+				<li style="background:#903" draggable="true">4</li>
+				<li style="background:#0f6" draggable="true">5</li>
+				<li style="background:#636" draggable="true">6</li>
+				<li style="background:#36f" draggable="true">7</li>
+				<li style="background:#033" draggable="true">8</li>
+			</ul>
+		</div>
+	</body>
+	<script>
+		var oUl = document.getElementById("box");
+		var oLi = oUl.getElementsByTagName("li");
+		var curr = 0;
+		function sort(){
+			for (var i = 0; i< oLi.length ; i++)
+			{
+				oLi[i].index = i;
+				oLi[i].ondragstart = function(ev){
+					ev = ev||window.event;
+					ev.dataTransfer.setData("data",this.innerHTML);
+					//this.innerHTML = "被拖拽中...";
+					curr = this.index;
+				}
+
+				oLi[i].ondragenter = function(){
+					for (var i =0; i<oLi.length ; i++ )
+					{
+						oLi[i].style.border = "none";
+					}
+					if (curr != this.index)
+					{
+						this.style.border = "2px solid #000";
+					}
+					
+				}
+
+
+				oLi[i].ondragover = function(ev){
+					ev = ev || window.event;
+					ev.preventDefault();
+				}
+
+				oLi[i].ondrop = function(ev){
+					//oUl.insertBefore(oLi[curr],this);
+					insertAfter(oLi[curr],this);
+					this.style.border = "none";
+					//console.log(ev.dataTransfer.getData("data"));
+					//oLi[curr].innerHTML = ev.dataTransfer.getData("data");
+					sort();
+				}
+			}
+		}
+		sort();
+		function insertAfter(newItem,targetItem){
+			var parentItem = targetItem.parentNode;
+			if (parentItem.lastChild == targetItem)
+			{
+				parentItem.appendChild(newItem);
+			}else{
+				parentItem.insertBefore(newItem,targetItem.nextSibling);
+			}
+		}
+	</script>
+</html>

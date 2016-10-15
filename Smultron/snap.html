@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SNAP HTML</title>
+    <script type="text/javascript" src="./js/snap.svg-min.js"></script>
+</head>
+
+<body>
+    <svg id="svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1000 100" preserveAspectRatio="none" id="svg"></svg>
+    <button id="btn">点击</button>
+    <script type="text/javascript">
+    var svg = Snap("#svg");
+    var btn = document.querySelector("#btn");
+    var p = svg.paper.path("M1000,0C1000,0,0,0,0,0C0,0,0,100,0,100C0,100,1000,100,1000,100").attr({
+        fill: "#000"
+    });
+    var mark = true;
+    btn.onclick = function() {
+        if (mark) {
+            p.animate({
+                d: "M1000,0C1000,0,0,0,0,0C0,0,116,97,393,100C681,103,593,38,1000,0",
+                fill: "#e22e27"
+            }, 1000, mina.linear);
+            mark = false;
+        } else {
+            p.animate({
+                d: "M1000,0C1000,0,0,0,0,0C0,0,0,100,0,100C0,100,1000,100,1000,100",
+                fill: "#000"
+            }, 1000, mina.linear);
+            mark = true;
+        }
+
+    };
+    </script>
+</body>
+
+</html>

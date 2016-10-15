@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>图片画布</title>
+  <style>
+		*{
+		margin:0;
+		padding:0;
+		}
+		body{
+			background:#000;
+		}
+		canvas{
+			position:absolute;
+			left:0;
+			top:0;
+			bottom:0;
+			right:0;
+			margin:auto;
+			background:#fff;
+		}
+  </style>
+ </head>
+ <body>
+	<canvas id="mycanvas" width=500 height=500></canvas>
+	<script>
+		var can=document.getElementById("mycanvas");
+		var cxt=can.getContext('2d');		//绘图环境
+		
+		var img=new Image()		//创建图片对象
+		img.src="images/1.jpg";
+		img.onload=draw;
+		function draw(){
+			cxt.drawImage(img,0,0,can.width,can.height);
+		}
+	</script>
+ </body>
+</html>

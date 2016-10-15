@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>画布</title>
+  <style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	body{
+		background:#fff;
+	}
+	canvas{
+		background:#c0c0c0;
+		display:block;
+		margin:100px auto;
+	}
+  </style>
+ </head>
+ <body>
+	<canvas id="mycanvas" width="500" height="500">
+		
+	</canvas>
+	<script>
+
+		//stroke fill绘制区分前后，后面一个会将前面一个覆盖，fill的起点是按照设定的起点	stroke的起点是按照线的中心点
+
+		var can=document.getElementById("mycanvas");
+		var cxt=can.getContext("2d");
+		cxt.beginPath();
+		cxt.moveTo(100,100);
+		cxt.lineTo(200,200);
+		cxt.lineTo(250,200);
+		cxt.lineTo(300,100);
+		cxt.closePath();
+		cxt.lineWidth=10;
+		//cxt.lineJoin="round";
+		cxt.stroke();
+		
+
+		cxt.beginPath();
+		cxt.moveTo(300,300);
+		cxt.lineTo(400,400);
+		cxt.lineTo(450,300);
+		cxt.lineWidth=10;
+		cxt.closePath();
+		cxt.stroke();
+		
+	</script>
+ </body>
+</html>
